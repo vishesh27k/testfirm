@@ -63,6 +63,18 @@
             transform: none;
         }
 
+        /* Input Autofill Fix for Light Theme */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: #1A1A1A;
+            -webkit-box-shadow: 0 0 0px 1000px #FDFBF7 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -214,7 +226,7 @@
                 Get In Touch
             </a>
             
-            <div class="mt-12 flex justify-center gap-8 text-sm text-gray-500">
+            <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm text-gray-500">
                  <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> New Delhi, India</span>
                  <span class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> info@ctkaassociates.com</span>
             </div>
@@ -224,7 +236,7 @@
     <!-- Footer -->
     <footer class="py-12 px-6 bg-white border-t border-stone-100 text-center">
         <p class="font-serif text-xl mb-4 text-charcoal">TK & Associates</p>
-        <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2024 Tanudeep Kaur & Associates. All Rights Reserved.</p>
+        <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2025 Tanudeep Kaur & Associates. All Rights Reserved.</p>
     </footer>
 
     <!-- Scripts -->
