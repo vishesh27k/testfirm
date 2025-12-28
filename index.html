@@ -400,7 +400,7 @@
             const subject = `Inquiry: ${service} - ${name}`;
             
             // Format the body content for the email
-            const bodyContent = `Name: ${name}\nEmail: ${email}\nService Interest: ${service}\n\nMessage:\n${message}`;
+            const bodyContent = `${message}`;
             
             // Open default mail client
             window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
