@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas | Tanudeep Kaur & Associates</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FDFBF7',
+                        paper: '#F2EFE9',
+                        charcoal: '#1A1A1A',
+                        gold: {
+                            400: '#B8860B', // Dark Goldenrod
+                            500: '#996515',
+                        },
+                        stone: {
+                            100: '#F5F5F4',
+                            800: '#292524',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3cd;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B8860B;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center text-charcoal bg-white/90 backdrop-blur-md shadow-sm">
+        <a href="index.html" class="font-serif text-2xl font-semibold tracking-wide hover:text-gold-500 transition-colors">TK & Associates</a>
+        
+        <div class="hidden md:flex space-x-10 text-xs font-medium tracking-[0.2em] uppercase text-gray-600">
+            <a href="index.html" class="hover:text-charcoal transition-colors">Home</a>
+            <a href="#" class="text-gold-500 transition-colors cursor-default">Practice Areas</a>
+            <a href="contact.html" class="hover:text-charcoal transition-colors">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-charcoal">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-paper z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-2xl font-serif text-charcoal">
+        <button id="close-menu" class="absolute top-6 right-6 text-charcoal hover:text-gold-500 transition-colors">
+            <i data-lucide="x"></i>
+        </button>
+        <a href="index.html" class="mobile-link hover:text-gold-500 italic">Home</a>
+        <a href="#" class="mobile-link text-gold-500 italic">Practice Areas</a>
+        <a href="contact.html" class="mobile-link hover:text-gold-500 italic">Contact</a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="pt-40 pb-20 px-6 md:px-12 bg-paper text-center">
+        <div class="max-w-4xl mx-auto fade-in-section is-visible">
+            <h1 class="font-serif text-5xl md:text-6xl text-charcoal mb-6">Practice Areas</h1>
+            <p class="text-gray-500 text-lg font-light leading-relaxed">
+                Navigating the intricate landscape of global finance with precision. We specialize in bridging the gap between Indian statutory requirements and US financial compliances.
+            </p>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-24 px-6 md:px-12">
+        <div class="max-w-5xl mx-auto space-y-24">
+            
+            <!-- Service 1: US & Global Tax -->
+            <!-- Mobile: Image (1) Text (2) | Desktop: Text (1) Image (2) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section">
+                <div class="order-2 md:order-1">
+                    <div class="w-16 h-16 bg-cream rounded-full flex items-center justify-center mb-6 text-gold-500 border border-stone-100">
+                        <i data-lucide="globe-2" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-4">US & Global Taxation</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We provide comprehensive tax solutions for individuals and businesses with cross-border interests. Our expertise ensures you remain compliant with the IRS while optimizing your global tax liabilities.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1"></i> Federal & State Tax Returns (1040, 1065, 1120)</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1"></i> FBAR & FATCA Compliance</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1"></i> Double Taxation Avoidance Agreement (DTAA) Advisory</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1"></i> Expat Tax Planning</li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 relative h-80 bg-stone-100 rounded-sm overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center bg-stone-200">
+                        <span class="font-serif text-8xl text-white/50 italic">US</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-px bg-stone-100"></div>
+
+            <!-- Service 2: Corporate Audit -->
+            <!-- Fixed Layout: Mobile: Image (1) Text (2) | Desktop: Image (1) Text (2) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section">
+                <!-- Text Content: Order 2 on Mobile, Order 2 on Desktop (Right Side) -->
+                <div class="order-2 md:order-2">
+                    <div class="w-16 h-16 bg-cream rounded-full flex items-center justify-center mb-6 text-charcoal border border-stone-100">
+                        <i data-lucide="briefcase" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-4">Corporate Audit & Assurance</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Our audit services go beyond compliance; we look for opportunities to improve your internal controls and operational efficiency. We ensure your financial statements are a true reflection of your business.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Statutory Audits under Companies Act</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Tax Audits (Income Tax Act)</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Internal & Management Audits</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> GST Audits & Compliance</li>
+                    </ul>
+                </div>
+                <!-- Image Content: Order 1 on Mobile, Order 1 on Desktop (Left Side) -->
+                <div class="order-1 md:order-1 relative h-80 bg-stone-100 rounded-sm overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center bg-stone-200">
+                        <span class="font-serif text-8xl text-white/50 italic">CA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-px bg-stone-100"></div>
+
+            <!-- Service 3: Advisory -->
+            <!-- Mobile: Image (1) Text (2) | Desktop: Text (1) Image (2) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section">
+                <div class="order-2 md:order-1">
+                    <div class="w-16 h-16 bg-cream rounded-full flex items-center justify-center mb-6 text-charcoal border border-stone-100">
+                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-4">Financial Advisory</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        We act as your strategic partners, offering high-level financial advice to help you make informed business decisions. From startup valuations to restructuring, we guide your growth.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Virtual CFO Services</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Business Valuation & Due Diligence</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Company Registration & Setup</li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-charcoal mt-1"></i> Financial Forecasting & Budgeting</li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 relative h-80 bg-stone-100 rounded-sm overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center bg-stone-200">
+                        <span class="font-serif text-8xl text-white/50 italic">FA</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-paper text-center">
+        <h2 class="font-serif text-3xl md:text-4xl mb-6 text-charcoal">Ready to optimize your finances?</h2>
+        <a href="contact.html" class="inline-block bg-charcoal text-white px-10 py-3 tracking-widest uppercase text-sm font-medium hover:bg-gold-500 hover:shadow-lg transition-all duration-300">
+            Get in Touch
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white text-center">
+        <p class="font-serif text-xl mb-4 text-charcoal">TK & Associates</p>
+        <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2024 Tanudeep Kaur & Associates. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach((el) => observer.observe(el));
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
