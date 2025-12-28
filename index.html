@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanudeep Kaur & Associates | Chartered Accountants</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FDFBF7',
+                        paper: '#F2EFE9',
+                        charcoal: '#1A1A1A',
+                        gold: {
+                            400: '#B8860B', // Dark Goldenrod
+                            500: '#996515',
+                        },
+                        stone: {
+                            100: '#F5F5F4',
+                            800: '#292524',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #1A1A1A;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Input Autofill Fix for Light Theme */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: #1A1A1A;
+            -webkit-box-shadow: 0 0 0px 1000px #FDFBF7 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3cd;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B8860B;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center text-charcoal bg-cream/0">
+        <a href="#" class="font-serif text-2xl font-semibold tracking-wide hover:text-gold-500 transition-colors">TK & Associates</a>
+        
+        <div class="hidden md:flex space-x-10 text-xs font-medium tracking-[0.2em] uppercase text-gray-600">
+            <a href="#about" class="hover:text-charcoal transition-colors">The Principal</a>
+            <a href="#expertise" class="hover:text-charcoal transition-colors">Expertise</a>
+            <a href="#contact" class="hover:text-charcoal transition-colors">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-charcoal">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-paper z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-2xl font-serif text-charcoal">
+        <button id="close-menu" class="absolute top-6 right-6 text-charcoal hover:text-gold-500 transition-colors">
+            <i data-lucide="x"></i>
+        </button>
+        <a href="#about" class="mobile-link hover:text-gold-500 italic">The Principal</a>
+        <a href="#expertise" class="mobile-link hover:text-gold-500 italic">Expertise</a>
+        <a href="#contact" class="mobile-link hover:text-gold-500 italic">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-50 rounded-full blur-[120px] -z-10 opacity-60"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-stone-100 rounded-full blur-[100px] -z-10 opacity-60"></div>
+
+        <div class="relative z-10 space-y-8 fade-in-section is-visible max-w-4xl mx-auto">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-full shadow-sm mb-4">
+                <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-500">Global Financial Expertise</span>
+            </div>
+
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-charcoal">
+                Tanudeep Kaur <br> 
+                <span class="text-4xl md:text-6xl text-gray-400 font-light italic">& Associates</span>
+            </h1>
+            
+            <p class="max-w-xl mx-auto text-gray-600 font-light text-lg leading-relaxed mt-6">
+                Specialized in navigating the complexities of <span class="text-charcoal font-medium border-b border-gold-400/30">US Compliances</span>, International Taxation, and Strategic Financial Planning.
+            </p>
+            
+            <div class="pt-8 flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#contact" class="px-10 py-4 bg-charcoal text-white font-medium text-sm tracking-widest uppercase hover:bg-gold-500 transition-colors duration-300 shadow-lg shadow-charcoal/20">
+                    Partner With Us
+                </a>
+                <a href="#expertise" class="group flex items-center gap-2 text-sm uppercase tracking-widest font-medium text-gray-500 hover:text-charcoal transition-colors">
+                    Explore Services <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Owner Section -->
+    <section id="about" class="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Image Placeholder -->
+            <div class="relative fade-in-section order-2 md:order-1">
+                <div class="aspect-[3/4] md:aspect-[4/5] bg-paper relative overflow-hidden group">
+                    <!-- Placeholder logic -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-paper">
+                         <span class="font-serif text-[12rem] text-stone-200 italic select-none">tk</span>
+                    </div>
+                    <!-- Decorative border -->
+                    <div class="absolute -inset-4 border border-stone-200 -z-10"></div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-8 fade-in-section order-1 md:order-2">
+                <h2 class="font-serif text-4xl md:text-5xl text-charcoal leading-tight">
+                    Beyond the Ledger: <br>
+                    <span class="text-gold-500 italic">Strategic Vision.</span>
+                </h2>
+                
+                <div class="space-y-6 text-gray-600 font-light leading-relaxed text-lg">
+                    <p>
+                        Hello, I'm <strong class="text-charcoal font-serif">Tanudeep Kaur</strong>.
+                    </p>
+                    <p>
+                        In a borderless economy, your financial strategy shouldn't be limited by geography. At TK & Associates, we bridge the gap between Indian statutory requirements and <strong class="text-charcoal">US financial compliances</strong>.
+                    </p>
+                    <p>
+                        Whether you are an expat managing dual-taxation, a startup scaling to US markets, or an established firm needing audit assurance, I provide personalized oversight to ensure your growth is compliant, efficient, and secure.
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-stone-100">
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-gold-400 flex items-center justify-center text-white font-serif italic text-xl">T</div>
+                        <div>
+                            <p class="text-sm font-bold text-charcoal uppercase tracking-wide">Tanudeep Kaur</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Founder & Principal Accountant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firm Metadata / Services -->
+    <section id="expertise" class="py-24 px-6 md:px-12 bg-paper relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 fade-in-section">
+                <h2 class="font-serif text-4xl text-charcoal mb-4">Core Expertise</h2>
+                <div class="h-px w-20 bg-gold-400"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: US Compliance (Highlighted) -->
+                <div class="bg-white p-10 shadow-soft hover:shadow-xl transition-shadow duration-300 fade-in-section border-t-4 border-gold-400">
+                    <div class="w-12 h-12 bg-cream rounded-full flex items-center justify-center mb-6 text-gold-500">
+                        <i data-lucide="globe-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-charcoal">US & Global Tax</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Specialized handling of US Federal & State Tax returns, FBAR filings, and cross-border taxation strategies for businesses and individuals.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-2 uppercase tracking-wide font-medium">
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gold-400 rounded-full"></div> US Tax Returns</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gold-400 rounded-full"></div> IRS Representation</li>
+                        <li class="flex items-center gap-2"><div class="w-1 h-1 bg-gold-400 rounded-full"></div> Treaty Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Indian Practice -->
+                <div class="bg-white p-10 shadow-soft hover:shadow-xl transition-shadow duration-300 fade-in-section" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-cream rounded-full flex items-center justify-center mb-6 text-charcoal">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-charcoal">Corporate Audit</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Comprehensive statutory audits, internal controls review, and company law compliance ensuring your books reflect absolute truth.
+                    </p>
+                    <p class="text-xs text-gold-500 font-bold uppercase tracking-wider">FRN: 123456N</p>
+                </div>
+
+                <!-- Card 3: Advisory -->
+                <div class="bg-white p-10 shadow-soft hover:shadow-xl transition-shadow duration-300 fade-in-section" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-cream rounded-full flex items-center justify-center mb-6 text-charcoal">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-charcoal">Financial Advisory</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Virtual CFO services, business valuation, and strategic roadmap planning to help startups and SMEs scale sustainability.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 md:px-12 relative bg-cream">
+        <div class="max-w-3xl mx-auto text-center fade-in-section">
+            <h2 class="font-serif text-4xl md:text-5xl text-charcoal mb-4">Let's Discuss Your <span class="italic text-gold-500">Portfolio.</span></h2>
+            <p class="text-gray-500 mb-12 font-light">Visit us in New Delhi or schedule a virtual consultation for US/Global queries.</p>
+
+            <!-- UPDATED FORM: Added name attributes to inputs -->
+            <form class="text-left space-y-8 max-w-lg mx-auto" onsubmit="handleSubmit(event)">
+                <div class="group relative">
+                    <!-- Added name="name" -->
+                    <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold-400 transition-colors peer placeholder-transparent" placeholder="Name">
+                    <!-- FIXED LABEL: Defaults to floating (-top-4), moves down only if placeholder shown -->
+                    <label for="name" class="absolute left-0 -top-4 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-gold-500 cursor-text">Name</label>
+                </div>
+                
+                <div class="group relative">
+                    <!-- Added name="email" -->
+                    <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold-400 transition-colors peer placeholder-transparent" placeholder="Email">
+                    <!-- FIXED LABEL: Defaults to floating (-top-4), moves down only if placeholder shown -->
+                    <label for="email" class="absolute left-0 -top-4 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-gold-500 cursor-text">Email Address</label>
+                </div>
+
+                <div class="group relative">
+                    <!-- Added name="service" -->
+                    <select id="service" name="service" class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold-400 transition-colors cursor-pointer appearance-none">
+                        <option value="" disabled selected>Select Inquiry Type</option>
+                        <option value="us-tax">US Taxation & Compliance</option>
+                        <option value="audit">Indian Statutory Audit</option>
+                        <option value="advisory">General Advisory</option>
+                    </select>
+                    <i data-lucide="chevron-down" class="absolute right-0 top-4 w-4 h-4 text-gray-400 pointer-events-none"></i>
+                </div>
+
+                <div class="group relative">
+                    <!-- Added name="message" -->
+                    <textarea id="message" name="message" rows="3" required class="w-full bg-transparent border-b border-gray-300 py-3 text-charcoal focus:outline-none focus:border-gold-400 transition-colors peer placeholder-transparent resize-none" placeholder="Message"></textarea>
+                    <!-- FIXED LABEL: Defaults to floating (-top-4), moves down only if placeholder shown -->
+                    <label for="message" class="absolute left-0 -top-4 text-gray-400 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-gold-500 cursor-text">How can we help?</label>
+                </div>
+
+                <button type="submit" class="w-full mt-8 bg-charcoal text-white py-4 font-serif text-lg hover:bg-gold-500 hover:shadow-lg transition-all duration-300">
+                    Compose Email
+                </button>
+                <!-- Status message container -->
+                <p id="form-status" class="hidden text-center text-sm mt-4 text-gray-500 font-medium"></p>
+            </form>
+
+            <div class="mt-16 pt-8 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
+                <div>
+                    <h4 class="font-serif text-xl mb-2 text-charcoal">Location</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Suite 404, Business Towers,<br>
+                        Connaught Place,<br>
+                        New Delhi, India 110001
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-serif text-xl mb-2 text-charcoal">Contact</h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        <a href="mailto:tanu@ctkaassociates.com" class="hover:text-gold-500 transition-colors">tanu@ctkaassociates.com</a><br>
+                        +91 98765 43210
+                    </p>
+                    <div class="flex gap-4 mt-4 text-gray-400">
+                        <a href="https://www.linkedin.com/in/ca-tanudeep-k-8b84411b2" class="hover:text-gold-500 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-white border-t border-stone-100 text-center">
+        <p class="font-serif text-xl mb-4 text-charcoal">TK & Associates</p>
+        <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2024 Tanudeep Kaur & Associates. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach((element) => {
+            observer.observe(element);
+        });
+
+        // Navbar Transition
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                nav.classList.remove('py-6', 'bg-cream/0');
+            } else {
+                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                nav.classList.add('py-6', 'bg-cream/0');
+            }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // UPDATED: Form Handling - Opens User's Email Client
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const form = e.target;
+            const name = form.querySelector('#name').value;
+            const email = form.querySelector('#email').value;
+            const service = form.querySelector('#service').value || "General Inquiry";
+            const message = form.querySelector('#message').value;
+
+            // Construct email details
+            const recipient = "contact@tanudeepca.com"; // Replace with your actual email
+            const subject = `Inquiry: ${service} - ${name}`;
+            
+            // Format the body content for the email
+            const bodyContent = `Name: ${name}\nEmail: ${email}\nService Interest: ${service}\n\nMessage:\n${message}`;
+            
+            // Open default mail client
+            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+            
+            // Visual feedback
+            const status = document.getElementById('form-status');
+            status.innerText = "Opening your email app...";
+            status.classList.remove('hidden');
+            
+            setTimeout(() => {
+                status.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
